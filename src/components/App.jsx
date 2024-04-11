@@ -18,11 +18,13 @@ class App extends Component {
     };
   }
 
+  // Called immediately after updating occurs
   componentDidUpdate() {
     const { contacts } = this.state;
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }
 
+  // Called after a component is mounted
   componentDidMount() {
     const savedContacts = localStorage.getItem('contacts');
     if (savedContacts !== null) {
